@@ -1,0 +1,14 @@
+node_modules/
+contract/target/
+web/.next/
+web/out/
+web/test-results/
+web/playwright-report/
+.env
+.env.local
+web/.env.local
+agent/.env
+.secrets/
+*.log
+.DS_Store
+*.pem

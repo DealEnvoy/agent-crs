@@ -1,0 +1,11 @@
+{
+  "name": "agent-crs",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test:contract": "cargo test --manifest-path contract/Cargo.toml",
+    "test:agent": "node --test agent/parse.test.mjs",
+    "board": "node agent/board.mjs",
+    "dev": "npm --prefix web run dev"
+  }
+}

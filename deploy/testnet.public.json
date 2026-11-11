@@ -1,0 +1,27 @@
+{
+  "network": "testnet",
+  "rpcUrl": "https://test.rpc.fastnear.com",
+  "fallbackRpcUrl": "https://rpc.testnet.near.org",
+  "contractId": "vault.acrs261111k7m2.testnet",
+  "ownerId": "acrs261111k7m2.testnet",
+  "agentId": "agent.acrs261111k7m2.testnet",
+  "vendorId": "vendor.acrs261111k7m2.testnet",
+  "otherId": "other.acrs261111k7m2.testnet",
+  "maxPerTxYocto": "500000000000000000000000",
+  "maxPerDayYocto": "10000000000000000000000000",
+  "agentKey": {
+    "permission": "function_call",
+    "receiverId": "vault.acrs261111k7m2.testnet",
+    "methodNames": ["request_spend"],
+    "publicKey": "ed25519:EfPE6Ej4RnFCqVhf7oRX9r5MpcRaA2wfD7v8B5hBhiwi"
+  },
+  "explorerAccount": "https://testnet.nearblocks.io/address/vault.acrs261111k7m2.testnet",
+  "officialExplorerAccount": "https://explorer.testnet.near.org/accounts/vault.acrs261111k7m2.testnet",
+  "transactions": {
+    "deployAndInit": "CHif5jfr3NhqpuV4vR3ULjhKTGehy7ZY46mxGCgdhQn2",
+    "functionCallKeyAdded": "2nyMh4HR8FPHgotevTKrzNUYSEUYhbhejRpQBQyrjdmF",
+    "agentFullAccessKeyDeleted": "5ygWQRDa1tYM4LuaMpKR9w8xU17ihx6AhoWZnP636WaL"
+  },
+  "payoutAccount": null,
+  "note": "Public account ids and transaction hashes only. Private keys are not in this repository. The prize payout account is not set."
+}

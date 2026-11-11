@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3efe6;
+  --ink: #1c1915;
+  --muted: #5c564c;
+  --line: #ddd4c4;
+  --oxide: #8f3228;
+  --good: #1c6b43;
+  --hold: #8a5a12;
+}
+
+body {
+  background:
+    linear-gradient(90deg, rgba(143, 50, 40, 0.14) 0 10px, transparent 10px),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-plex), "IBM Plex Sans", sans-serif;
+}
+
+#demo-caption:empty {
+  display: none;
+}
+
+#demo-caption {
+  position: fixed;
+  left: 20px;
+  right: 20px;
+  bottom: 16px;
+  z-index: 40;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 14px 18px;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.sheet {
+  background: rgba(255, 252, 247, 0.88);
+  border: 1px solid var(--line);
+}
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7.5rem;
+  border: 2px solid currentColor;
+  padding: 0.15rem 0.55rem;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-6deg);
+}
+
+.meter {
+  height: 8px;
+  background: #e7e0d4;
+  overflow: hidden;
+}
+
+.meter > span {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+}

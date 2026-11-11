@@ -1,0 +1,12 @@
+{
+  "name": "agent-crs-agent",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "near-api-js": "^5.1.0"
+  }
+}
