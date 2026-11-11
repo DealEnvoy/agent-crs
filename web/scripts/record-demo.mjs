@@ -36,23 +36,31 @@ async function hold(ms) {
   await page.waitForTimeout(ms);
 }
 
+async function showResult() {
+  await result.evaluate((el) => {
+    el.scrollIntoView({ block: "center", inline: "nearest" });
+  });
+}
+
 await page.goto("http://127.0.0.1:43123", { waitUntil: "networkidle" });
 await page.getByRole("heading", { name: "Policy" }).waitFor({ timeout: 20000 });
 await caption("Agents should not hold the keys to the vault.");
-await hold(5000);
+await hold(4000);
 await shot("01-policy.png");
 await caption("Allowlist, a per transaction cap, and a daily cap. The default is deny.");
 await page.locator("#policy").scrollIntoViewIfNeeded();
-await hold(6000);
+await hold(4000);
 
 await caption("Inside policy, the vault releases the spend. No model was called.");
 const box = page.locator("#spend-text");
 await box.fill("");
-await box.pressSequentially("Pay 0.1 NEAR to vendor for RPC access", { delay: 28 });
+await box.pressSequentially("Pay 0.1 NEAR to vendor for RPC access", { delay: 22 });
 await page.getByRole("button", { name: "Ask the vault" }).click();
-await page.getByTestId("proposal-result").getByText("released", { exact: true }).waitFor({ timeout: 50000 });
+const result = page.getByTestId("proposal-result");
+await result.getByText("released", { exact: true }).waitFor({ timeout: 50000 });
 await page.locator("#audit tbody tr").first().getByText("Executed").waitFor({ timeout: 20000 });
-await hold(4000);
+await showResult();
+await hold(3500);
 
 await caption("Over the cap, the spend waits. The agent key cannot approve it.");
 await box.fill("");
@@ -66,12 +74,15 @@ await hold(3000);
 
 await caption("The owner signs with a full access key. One yoctoNEAR proves it is not the agent key.");
 await page.getByRole("button", { name: "Approve" }).click();
-await page.getByText("No spend is waiting").waitFor({ timeout: 50000 });
+await result.getByText("released", { exact: true }).waitFor({ timeout: 50000 });
+await showResult();
+await hold(2500);
+await page.getByText("No spend is waiting").waitFor({ timeout: 20000 });
 await page.locator("#audit").scrollIntoViewIfNeeded();
 await hold(1500);
 await shot("03-audit.png");
 await caption("Every step is on chain. Agent CRS, built at NEAR Hackathon.");
-const remaining = 70000 - elapsed();
+const remaining = 68000 - elapsed();
 if (remaining > 0) await hold(remaining);
 console.log(`elapsed_ms=${elapsed()}`);
 

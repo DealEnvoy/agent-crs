@@ -146,7 +146,7 @@ The scripts refuse any network id other than `testnet`.
 
 ## Demo
 
-Screenshots and a 76 second Playwright recording are in `docs/demo/`:
+Screenshots and a 68 second Playwright recording are in `docs/demo/`:
 
 - `docs/demo/01-policy.png`
 - `docs/demo/02-queued.png`
