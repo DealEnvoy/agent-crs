@@ -214,7 +214,8 @@ Giving an AI a wallet should not mean giving it the keys to everything.
 
 I built Agent CRS at NEAR HACKATHON: a policy vault on NEAR testnet. The agent holds a function call key. Spends stay inside an allowlist and caps, or a human approves them. The contract logs every step.
 
-Demo video and repo: add the public links after publishing.
+Repo: https://github.com/DealEnvoy/agent-crs
+Demo video: https://github.com/DealEnvoy/agent-crs/blob/main/docs/demo/agent-crs-demo.webm
 
 Built at NEAR HACKATHON · @NEARProtocol #NEARHackathon
 
